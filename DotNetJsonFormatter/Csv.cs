@@ -29,8 +29,13 @@ namespace DotNetJsonFormatter
                 {
                     if (writeHeader)
                     {
-                        // TODO implement useTitleCase
-                        header.Append(HandleSpecialCharsForCsv(ReplaceNewLines(jProperty.Name, newLineSubstitutionChar))).Append(',');
+                        var fixedHeader = ReplaceNewLines(jProperty.Name, newLineSubstitutionChar);
+
+                        if(useTitleCase){
+                            fixedHeader = ci.TextInfo.ToTitleCase(fixedHeader);
+                        }
+
+                        header.Append(HandleSpecialCharsForCsv(fixedHeader)).Append(',');
                     }
 
                     row.Append(HandleSpecialCharsForCsv(ReplaceNewLines(jProperty.First.ToString(), newLineSubstitutionChar))).Append(',');

@@ -14,7 +14,7 @@ namespace ExampleUsage
 
             sampleData.Add("[{\"person id\":1,\"name\":\"O\\\"Miley\",\"created date\":\"12/9/2017 8:01:52 PM\"},{\"person id\":2,\"name\":\"Sally\",\"createdDate\":\"12/9/2017 8:01:52 PM\"},{\"person id\":3,\"name\":\"Jackie\",\"createdDate\":\"12/9/2017 8:01:52 PM\"},{\"person id\":4,\"name\":\"Freddie\",\"createdDate\":\"12/9/2017 8:01:52 PM\"},{\"person id\":5,\"name\":\"McMaster\",\"createdDate\":\"12/9/2017 8:01:52 PM\"}]");
 
-            sampleData.Add(@"[{CPU: 'Intel',Drives: ['DVD read/writer','500 gigabyte hard drive']}]");
+            sampleData.Add(@"[{CPU: 'Intel',drives: ['DVD read/writer','500 gigabyte hard drive']}]");
 
             foreach (string jsonarray in sampleData)
             {

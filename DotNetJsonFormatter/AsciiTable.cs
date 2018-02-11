@@ -51,10 +51,12 @@ namespace DotNetJsonFormatter
                 foreach (JProperty jProperty in jArray[i].Children())
                 {
                     if (handleHeader)
-                    {
-                        string header = useTitleCase ?
-                            ci.TextInfo.ToTitleCase(ReplaceNewLines(jProperty.Name, newLineSubstitutionChar)) :
-                            ReplaceNewLines(jProperty.Name, newLineSubstitutionChar);
+                    {                        
+                        string header = ReplaceNewLines(jProperty.Name, newLineSubstitutionChar);
+
+                        if(useTitleCase){
+                            header = ci.TextInfo.ToTitleCase(header);
+                        }
 
                         headerRow.Add(header);
                         columnWidths.Add(header.Length + headerPadding);
