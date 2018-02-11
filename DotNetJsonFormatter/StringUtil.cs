@@ -6,27 +6,11 @@ namespace DotNetJsonFormatter
     {
         public static string ReplaceNewLines(string s, char newLineSubstitutionChar = '\0')
         {
-            // TODO 
-            // there may be a built-in function that will accomplish this 
-            // once back online, do a search
-            StringBuilder r = new StringBuilder();
+            string replacement = (newLineSubstitutionChar == '\0') ?
+                string.Empty :
+                new string(newLineSubstitutionChar, 1);
 
-            foreach (char c in s)
-            {
-                if ((c == '\n'))
-                {
-                    if (newLineSubstitutionChar != '\0')
-                    {
-                        r.Append(newLineSubstitutionChar);
-                    }
-                }
-                else
-                {
-                    r.Append(c);
-                }
-            }
-
-            return r.ToString();
+            return s.Replace("\n", replacement);
         }
 
         public static string HandleSpecialCharsForCsv(string s)
