@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-    <ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DotNetJsonFormatter\DotNetJsonFormatter.csproj" />
   </ItemGroup>
 
