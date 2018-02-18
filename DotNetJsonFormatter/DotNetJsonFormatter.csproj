@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>1.1.0</VersionPrefix>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>DotNetJsonFormatter</AssemblyName>
     <PackageId>DotNetJsonFormatter</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Title>DotNetJsonFormatter</Title>
+    <Description>Format json into ascii tables, csv, etc.</Description>
+    <Version>1.2.0</Version>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Trickfest</Authors>
+    <AssemblyName>DotNetJsonFormatter</AssemblyName>
+    <PackageProjectUrl>https://github.com/Trickfest/DotNetJsonFormatter</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
