@@ -15,14 +15,14 @@ namespace DotNetJsonFormatter
 
         public static string HandleSpecialCharsForCsv(string s)
         {
-            // this tries to mimic what Excel does
+            // this tries to mimic what Excel does.
             // if the string contains either a comma or a double quote
             // then duplicate each double quote and then
             // put everything inside of double quotes
             // otherwise do nothing
             if (s.Contains(",") || s.Contains("\""))
             {
-                StringBuilder sb = HandleEmbeddedQuotes(s);
+                StringBuilder sb = HandleEmbeddedQuotesForCsv(s);
                 sb.Insert(0, '"');
                 sb.Append('"');
                 s = sb.ToString();
@@ -31,7 +31,7 @@ namespace DotNetJsonFormatter
             return s;
         }
 
-        public static StringBuilder HandleEmbeddedQuotes(string s)
+        public static StringBuilder HandleEmbeddedQuotesForCsv(string s)
         {
             StringBuilder r = new StringBuilder();
 

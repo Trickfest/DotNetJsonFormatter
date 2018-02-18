@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Text;
 using static System.Console;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,7 +11,7 @@ namespace DotNetJsonFormatter
 {
     public static class AsciiTable
     {
-        public static string Json2Table(string jsonarray,
+        public static string Json2Table(string jsonArray,
             bool useTitleCase = true,
             int headerPadding = 2,
             int columnPadding = 2,
@@ -21,12 +21,12 @@ namespace DotNetJsonFormatter
             List<int> columnWidths = new List<int>();
             List<List<string>> tableData = new List<List<string>>();
 
-            ProcessData(jsonarray, headerRow, columnWidths, tableData, useTitleCase, headerPadding, newLineSubstitutionChar);
+            ProcessData(jsonArray, headerRow, columnWidths, tableData, useTitleCase, headerPadding, newLineSubstitutionChar);
 
             return CreateTable(headerRow, columnWidths, tableData, columnPadding);
         }
 
-        private static bool ProcessData(string jsonarray,
+        private static void ProcessData(string jsonArray,
             List<string> headerRow,
             List<int> columnWidths,
             List<List<string>> tableData,
@@ -34,27 +34,28 @@ namespace DotNetJsonFormatter
             int headerPadding,
             char newLineSubstitutionChar)
         {
-            bool handleHeader = true;
-
             var jsonLoadSettings = new JsonLoadSettings();
             jsonLoadSettings.CommentHandling = CommentHandling.Ignore;
 
-            JArray jArray = JArray.Parse(jsonarray, jsonLoadSettings);
+            JArray jArray = JArray.Parse(jsonArray, jsonLoadSettings);
 
             var ci = new CultureInfo("en-US");
 
+            // loop through each row in the array
             for (int i = 0; i < jArray.Count; i++)
             {
                 List<string> rowData = new List<string>();
 
+                // loop through each element in the row
                 int j = 0;
                 foreach (JProperty jProperty in jArray[i].Children())
                 {
-                    if (handleHeader)
-                    {                        
+                    if (i == 0) // if on first row, then build header
+                    {
                         string header = ReplaceNewLines(jProperty.Name, newLineSubstitutionChar);
 
-                        if(useTitleCase){
+                        if (useTitleCase)
+                        {
                             header = ci.TextInfo.ToTitleCase(header);
                         }
 
@@ -75,10 +76,7 @@ namespace DotNetJsonFormatter
                 }
 
                 tableData.Add(rowData);
-                handleHeader = false;
             }
-
-            return handleHeader;
         }
 
         private static string CreateTable(List<string> headerRow,
@@ -114,6 +112,5 @@ namespace DotNetJsonFormatter
 
             return table.ToString();
         }
-
     }
 }

@@ -16,16 +16,16 @@ namespace ExampleUsage
 
             sampleData.Add(@"[{CPU: 'Intel',drives: ['DVD read/writer','500 gigabyte hard drive']}]");
 
-            foreach (string jsonarray in sampleData)
+            foreach (string jsonArray in sampleData)
             {
                 WriteLine("*********** ASCII TABLE **********");
 
-                var table = Json2Table(jsonarray, true, 2, 2, '\0');
+                var table = Json2Table(jsonArray, true, 2, 2, '\0');
                 Write(table);
 
                 WriteLine("*********** CSV **********");
 
-                var csv = Json2Csv(jsonarray, true, '\0');
+                var csv = Json2Csv(jsonArray, true, '\0');
                 Write(csv);
             }
         }

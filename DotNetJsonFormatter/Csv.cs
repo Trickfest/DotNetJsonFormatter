@@ -11,14 +11,14 @@ namespace DotNetJsonFormatter
 {
     public static class Csv
     {
-        public static string Json2Csv(string jsonarray, bool useTitleCase = true, char newLineSubstitutionChar = ' ')
+        public static string Json2Csv(string jsonArray, bool useTitleCase = true, char newLineSubstitutionChar = ' ')
         {
             bool writeHeader = true;
             StringBuilder result = new StringBuilder();
 
             var ci = new CultureInfo("en-US");
 
-            JArray jArray = JArray.Parse(jsonarray);
+            JArray jArray = JArray.Parse(jsonArray);
 
             foreach (JObject jObject in jArray)
             {
