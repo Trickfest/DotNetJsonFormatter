@@ -4,7 +4,7 @@
     <PackageId>DotNetJsonFormatter</PackageId>
     <Title>DotNetJsonFormatter</Title>
     <Description>Format json into ascii tables, csv, etc.</Description>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Trickfest</Authors>
     <AssemblyName>DotNetJsonFormatter</AssemblyName>

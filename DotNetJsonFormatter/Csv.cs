@@ -1,7 +1,7 @@
 using System;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Text;
 using static System.Console;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,7 +11,10 @@ namespace DotNetJsonFormatter
 {
     public static class Csv
     {
-        public static string Json2Csv(string jsonArray, bool useTitleCase = true, char newLineSubstitutionChar = ' ')
+        public static string Json2Csv(string jsonArray,
+            bool useTitleCase = true,
+            char newLineSubstitutionChar = ' ',
+            char separatorChar = ',')
         {
             bool writeHeader = true;
             StringBuilder result = new StringBuilder();
@@ -31,14 +34,16 @@ namespace DotNetJsonFormatter
                     {
                         var fixedHeader = ReplaceNewLines(jProperty.Name, newLineSubstitutionChar);
 
-                        if(useTitleCase){
+                        if (useTitleCase)
+                        {
                             fixedHeader = ci.TextInfo.ToTitleCase(fixedHeader);
                         }
 
-                        header.Append(HandleSpecialCharsForCsv(fixedHeader)).Append(',');
+                        header.Append(HandleSpecialCharsForCsv(fixedHeader)).Append(separatorChar);
                     }
 
-                    row.Append(HandleSpecialCharsForCsv(ReplaceNewLines(jProperty.First.ToString(), newLineSubstitutionChar))).Append(',');
+                    row.Append(HandleSpecialCharsForCsv(ReplaceNewLines(jProperty.First.ToString(),
+                        newLineSubstitutionChar))).Append(separatorChar);
                 }
 
                 if (writeHeader)

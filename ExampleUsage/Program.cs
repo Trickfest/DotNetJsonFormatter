@@ -25,7 +25,7 @@ namespace ExampleUsage
 
                 WriteLine("*********** CSV **********");
 
-                var csv = Json2Csv(jsonArray, true, '\0');
+                var csv = Json2Csv(jsonArray, true, '\0', '|');
                 Write(csv);
             }
         }
