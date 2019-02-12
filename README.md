@@ -1,6 +1,6 @@
 # DotNetJsonFormatter
 
-Format json into ascii tables, csv, etc.
+Format json into ascii tables or csv.
 
 For more information, see ExampleUsage sample program.
 
