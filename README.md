@@ -1,4 +1,6 @@
 # DotNetJsonFormatter
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTrickfest%2FDotNetJsonFormatter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FTrickfest%2FDotNetJsonFormatter?ref=badge_shield)
+
 
 Format json into ascii tables or csv.
 
@@ -21,3 +23,7 @@ For more information, see ExampleUsage sample program.
     3,Jackie,12/9/2017 8:01:52 PM
     4,Freddie,12/9/2017 8:01:52 PM
     5,McMaster,12/9/2017 8:01:52 PM
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FTrickfest%2FDotNetJsonFormatter.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FTrickfest%2FDotNetJsonFormatter?ref=badge_large)
